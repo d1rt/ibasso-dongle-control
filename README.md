@@ -7,6 +7,16 @@ Dongle Control for iBasso is a small native SwiftUI application and command-line
 This project is not affiliated with or endorsed by iBasso Audio.  
 iBasso and DC Elite are trademarks of their respective owners.
 
+## Installation
+
+Download the latest DMG from [GitHub Releases](https://github.com/d1rt/ibasso-dongle-control/releases/latest).
+
+1. Open `Dongle-Control-for-iBasso-v0.1.0.dmg`.
+2. Drag **Dongle Control for iBasso** to **Applications**.
+3. Launch the app from Applications.
+
+Version 0.1.0 is ad-hoc signed and is not notarized. If macOS blocks its first launch, open **System Settings → Privacy & Security**, find the blocked application message, and click **Open Anyway**. Do not disable Gatekeeper globally.
+
 ## Currently tested hardware
 
 | Device | Status |
@@ -31,13 +41,16 @@ Device support is profile-based. Controls are only exposed when a capability has
 
 Analog volume, balance, and gain controls are intentionally absent because no verified DC Elite HID commands are known for them.
 
-## Requirements
+## User requirements
 
 - macOS 13 or later
-- Xcode 16 or later
 - A supported device connected over USB
 
-## Build the application
+The downloadable application does not require Xcode, Swift, or any third-party runtime.
+
+## Building from source
+
+Source builds require Xcode 16 or later.
 
 Open `IBassoDongleControl.xcodeproj`, select the **Dongle Control for iBasso** scheme, and run it on **My Mac**.
 
@@ -57,6 +70,14 @@ xcodebuild \
   -destination "platform=macOS" \
   build
 ```
+
+To run tests and produce the Release app, ZIP, DMG, and SHA-256 checksums in `dist/`:
+
+```shell
+./scripts/release.sh
+```
+
+The script creates an arm64 Release build. It uses ad-hoc signing by default; release maintainers with an appropriate identity can explicitly set `SIGNING_IDENTITY`.
 
 ## CLI
 
