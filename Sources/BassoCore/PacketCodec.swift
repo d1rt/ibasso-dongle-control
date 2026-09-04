@@ -6,7 +6,7 @@ public struct HIDPacket: Equatable, Sendable {
 
     public init(validating bytes: [UInt8]) throws {
         guard bytes.count == Self.length else {
-            throw DCEliteError.invalidPacketLength(actual: bytes.count)
+            throw DongleError.invalidPacketLength(actual: bytes.count)
         }
         self.bytes = bytes
     }
@@ -16,17 +16,11 @@ public struct HIDPacket: Equatable, Sendable {
     public var commandComplement: UInt8 { bytes[2] }
     public var payload: ArraySlice<UInt8> { bytes[4...7] }
     public var hex: String { bytes.map { String(format: "%02X", $0) }.joined(separator: " ") }
-
-    public var hasValidCommandComplement: Bool {
-        command ^ commandComplement == 0xFF
-    }
+    public var hasValidCommandComplement: Bool { command ^ commandComplement == 0xFF }
 
     public func validateCommandComplement() throws {
         guard hasValidCommandComplement else {
-            throw DCEliteError.invalidCommandComplement(
-                command: command,
-                complement: commandComplement
-            )
+            throw DongleError.invalidCommandComplement(command: command, complement: commandComplement)
         }
     }
 
@@ -36,10 +30,8 @@ public struct HIDPacket: Equatable, Sendable {
         payload: [UInt8] = [0, 0, 0, 0]
     ) throws -> HIDPacket {
         guard payload.count == 4 else {
-            throw DCEliteError.invalidPacketLength(actual: payload.count + 4)
+            throw DongleError.invalidPacketLength(actual: payload.count + 4)
         }
-        return try HIDPacket(
-            validating: [sequence, command, ~command, 0] + payload
-        )
+        return try HIDPacket(validating: [sequence, command, ~command, 0] + payload)
     }
 }

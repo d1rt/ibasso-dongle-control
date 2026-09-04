@@ -1,7 +1,4 @@
 public struct DeviceInfo: Equatable, Sendable {
-    public static let vendorID = 0x2FC6
-    public static let productID = 0xF0B5
-
     public let manufacturer: String
     public let product: String
     public let serialNumber: String?

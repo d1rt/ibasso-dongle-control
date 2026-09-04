@@ -2,7 +2,8 @@ import AudioToolbox
 import Foundation
 
 public enum AudioDeviceDiscovery {
-    public static func primaryPlayInterfaceDetected() -> Bool {
+    public static func isDetected(for profile: DeviceProfileInfo) -> Bool {
+        guard let expectedName = profile.audioDeviceName else { return false }
         var address = AudioObjectPropertyAddress(
             mSelector: kAudioHardwarePropertyDevices,
             mScope: kAudioObjectPropertyScopeGlobal,
@@ -10,27 +11,23 @@ public enum AudioDeviceDiscovery {
         )
         var dataSize: UInt32 = 0
         guard AudioObjectGetPropertyDataSize(
-            AudioObjectID(kAudioObjectSystemObject),
-            &address,
-            0,
-            nil,
-            &dataSize
+            AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &dataSize
         ) == noErr else { return false }
 
-        let count = Int(dataSize) / MemoryLayout<AudioDeviceID>.size
-        var devices = Array(repeating: AudioDeviceID(0), count: count)
+        var devices = Array(
+            repeating: AudioDeviceID(0),
+            count: Int(dataSize) / MemoryLayout<AudioDeviceID>.size
+        )
         guard AudioObjectGetPropertyData(
-            AudioObjectID(kAudioObjectSystemObject),
-            &address,
-            0,
-            nil,
-            &dataSize,
-            &devices
+            AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &dataSize, &devices
         ) == noErr else { return false }
 
         return devices.contains { device in
-            stringProperty(device, selector: kAudioObjectPropertyName) == "Primary Play Interface"
-                && stringProperty(device, selector: kAudioObjectPropertyManufacturer) == "iBasso"
+            guard stringProperty(device, selector: kAudioObjectPropertyName) == expectedName else {
+                return false
+            }
+            guard let expectedManufacturer = profile.audioManufacturer else { return true }
+            return stringProperty(device, selector: kAudioObjectPropertyManufacturer) == expectedManufacturer
         }
     }
 

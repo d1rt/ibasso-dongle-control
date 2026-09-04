@@ -1,7 +1,7 @@
 import Foundation
 import IOKit
 
-public enum DCEliteError: Error, Equatable, Sendable {
+public enum DongleError: Error, Equatable, Sendable {
     case deviceNotFound
     case deviceOpenFailed(code: Int32)
     case invalidPacketLength(actual: Int)
@@ -11,40 +11,39 @@ public enum DCEliteError: Error, Equatable, Sendable {
     case deviceDisconnected
     case unexpectedResponse(expectedSequence: UInt8, actualSequence: UInt8)
     case unsupportedValue(field: String, value: UInt8)
+    case unsupportedCapability(DeviceCapability)
     case writeVerificationFailed(group: String)
+
+    public var technicalDetails: String {
+        String(describing: self)
+    }
 }
 
-extension DCEliteError: LocalizedError {
+extension DongleError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .deviceNotFound:
-            return "DC Elite is not connected or its HID interface is unavailable."
+            "No supported iBasso dongle is connected, or its HID interface is unavailable."
         case let .deviceOpenFailed(code):
-            return "Could not open the DC Elite HID interface (IOReturn \(Self.hex(code)))."
+            "Could not open the device HID interface (IOReturn \(Self.hex(code)))."
         case let .invalidPacketLength(actual):
-            return "Expected an 8-byte HID packet, received \(actual) bytes."
+            "Expected an 8-byte HID packet, received \(actual) bytes."
         case let .invalidCommandComplement(command, complement):
-            return String(
-                format: "Invalid command/complement pair: %02X/%02X.",
-                command,
-                complement
-            )
+            String(format: "Invalid command/complement pair: %02X/%02X.", command, complement)
         case let .outputReportFailed(code):
-            return "Sending the HID output report failed (IOReturn \(Self.hex(code)))."
+            "Sending the HID output report failed (IOReturn \(Self.hex(code)))."
         case let .timeout(sequence):
-            return String(format: "Timed out waiting for response 0x%02X.", sequence)
+            String(format: "Timed out waiting for response 0x%02X.", sequence)
         case .deviceDisconnected:
-            return "DC Elite was disconnected."
+            "The device was disconnected."
         case let .unexpectedResponse(expected, actual):
-            return String(
-                format: "Expected response 0x%02X, received 0x%02X.",
-                expected,
-                actual
-            )
+            String(format: "Expected response 0x%02X, received 0x%02X.", expected, actual)
         case let .unsupportedValue(field, value):
-            return String(format: "Unsupported %@ value: 0x%02X.", field, value)
+            String(format: "Unsupported %@ value: 0x%02X.", field, value)
+        case let .unsupportedCapability(capability):
+            "This device profile does not support \(capability.rawValue)."
         case let .writeVerificationFailed(group):
-            return "The device did not confirm the requested \(group) settings."
+            "The device did not confirm the requested \(group) settings."
         }
     }
 

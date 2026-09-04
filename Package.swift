@@ -3,34 +3,39 @@
 import PackageDescription
 
 let package = Package(
-    name: "dc-elite-control",
+    name: "ibasso-dongle-control",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .library(name: "DCEliteCore", targets: ["DCEliteCore"]),
-        .executable(name: "dc-elite", targets: ["DCEliteCLI"]),
-        .executable(name: "DCEliteControlApp", targets: ["DCEliteControlApp"])
+        .library(name: "BassoCore", targets: ["BassoCore"]),
+        .library(name: "DongleControlFeature", targets: ["DongleControlFeature"]),
+        .executable(name: "ibasso-dongle", targets: ["BassoCLI"]),
+        .executable(name: "DongleControlApp", targets: ["DongleControlApp"])
     ],
     targets: [
         .target(
-            name: "DCEliteCore",
+            name: "BassoCore",
             linkerSettings: [
                 .linkedFramework("IOKit"),
                 .linkedFramework("AudioToolbox")
             ]
         ),
         .executableTarget(
-            name: "DCEliteCLI",
-            dependencies: ["DCEliteCore"]
+            name: "BassoCLI",
+            dependencies: ["BassoCore"]
+        ),
+        .target(
+            name: "DongleControlFeature",
+            dependencies: ["BassoCore"]
         ),
         .executableTarget(
-            name: "DCEliteControlApp",
-            dependencies: ["DCEliteCore"]
+            name: "DongleControlApp",
+            dependencies: ["BassoCore", "DongleControlFeature"]
         ),
         .testTarget(
-            name: "DCEliteCoreTests",
-            dependencies: ["DCEliteCore"]
+            name: "BassoCoreTests",
+            dependencies: ["BassoCore", "DongleControlFeature"]
         )
     ]
 )
