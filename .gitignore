@@ -3,3 +3,6 @@
 /.swiftpm
 xcuserdata/
 DerivedData/
+
+# Legacy project name; the maintained Xcode project is IBassoDongleControl.xcodeproj.
+/DCEliteControl.xcodeproj/
