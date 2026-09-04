@@ -14,11 +14,11 @@ iBasso and DC Elite are trademarks of their respective owners.
 
 Download the latest DMG from [GitHub Releases](https://github.com/d1rt/ibasso-dongle-control/releases/latest).
 
-1. Open `Dongle-Control-for-iBasso-v0.1.0.dmg`.
+1. Open `Dongle-Control-for-iBasso-v0.1.1.dmg`.
 2. Drag **Dongle Control for iBasso** to **Applications**.
 3. Launch the app from Applications.
 
-Version 0.1.0 is ad-hoc signed and is not notarized. If macOS blocks its first launch, open **System Settings → Privacy & Security**, find the blocked application message, and click **Open Anyway**. Do not disable Gatekeeper globally.
+Version 0.1.1 is ad-hoc signed and is not notarized. If macOS blocks its first launch, open **System Settings → Privacy & Security**, find the blocked application message, and click **Open Anyway**. Do not disable Gatekeeper globally.
 
 ## Currently tested hardware
 

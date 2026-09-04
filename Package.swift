@@ -31,7 +31,10 @@ let package = Package(
         ),
         .executableTarget(
             name: "DongleControlApp",
-            dependencies: ["BassoCore", "DongleControlFeature"]
+            dependencies: ["BassoCore", "DongleControlFeature"],
+            resources: [
+                .process("Assets.xcassets")
+            ]
         ),
         .testTarget(
             name: "BassoCoreTests",

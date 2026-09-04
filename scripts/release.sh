@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-VERSION="${VERSION:-0.1.0}"
-BUILD_NUMBER="${BUILD_NUMBER:-1}"
+VERSION="${VERSION:-0.1.1}"
+BUILD_NUMBER="${BUILD_NUMBER:-2}"
 APP_NAME="Dongle Control for iBasso"
 ASSET_BASENAME="Dongle-Control-for-iBasso-v${VERSION}"
 SCHEME="Dongle Control for iBasso"
