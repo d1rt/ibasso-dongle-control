@@ -9,17 +9,23 @@ let package = Package(
     ],
     products: [
         .library(name: "DCEliteCore", targets: ["DCEliteCore"]),
-        .executable(name: "dc-elite", targets: ["DCEliteCLI"])
+        .executable(name: "dc-elite", targets: ["DCEliteCLI"]),
+        .executable(name: "DCEliteControlApp", targets: ["DCEliteControlApp"])
     ],
     targets: [
         .target(
             name: "DCEliteCore",
             linkerSettings: [
-                .linkedFramework("IOKit")
+                .linkedFramework("IOKit"),
+                .linkedFramework("AudioToolbox")
             ]
         ),
         .executableTarget(
             name: "DCEliteCLI",
+            dependencies: ["DCEliteCore"]
+        ),
+        .executableTarget(
+            name: "DCEliteControlApp",
             dependencies: ["DCEliteCore"]
         ),
         .testTarget(

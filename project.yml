@@ -1,0 +1,63 @@
+name: DCEliteControl
+options:
+  bundleIdPrefix: dev.dcelite
+  deploymentTarget:
+    macOS: "13.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+targets:
+  DCEliteCore:
+    type: framework
+    platform: macOS
+    sources: Sources/DCEliteCore
+    dependencies:
+      - sdk: IOKit.framework
+      - sdk: AudioToolbox.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.core
+        GENERATE_INFOPLIST_FILE: YES
+  dc-elite:
+    type: tool
+    platform: macOS
+    sources: Sources/DCEliteCLI
+    dependencies:
+      - target: DCEliteCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.cli
+  DC Elite Control:
+    type: application
+    platform: macOS
+    sources: Sources/DCEliteControlApp
+    dependencies:
+      - target: DCEliteCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.app
+        PRODUCT_NAME: DC Elite Control
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: DC Elite Control
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        ENABLE_APP_SANDBOX: NO
+  DCEliteCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: Tests/DCEliteCoreTests
+    dependencies:
+      - target: DCEliteCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  DC Elite Control:
+    build:
+      targets:
+        DC Elite Control: all
+        DCEliteCoreTests: [test]
+    test:
+      targets:
+        - DCEliteCoreTests
