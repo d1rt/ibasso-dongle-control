@@ -22,6 +22,7 @@ public final class HIDTransport: @unchecked Sendable {
     private let manager: IOHIDManager
     private let device: IOHIDDevice
     private let callbackQueue = DispatchQueue(label: "dev.dcelite.hid.callback")
+    private let cancellationSemaphore = DispatchSemaphore(value: 0)
     private let exchangeLock = NSLock()
     private let responseCondition = NSCondition()
     private let inputBuffer: UnsafeMutablePointer<UInt8>
@@ -36,22 +37,14 @@ public final class HIDTransport: @unchecked Sendable {
         self.debugLogger = debugLogger
         manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
 
-        let matching: [String: Any] = [
-            kIOHIDVendorIDKey as String: DeviceInfo.vendorID,
-            kIOHIDProductIDKey as String: DeviceInfo.productID
-        ]
-        IOHIDManagerSetDeviceMatching(manager, matching as CFDictionary)
+        DeviceDiscovery.configure(manager)
 
         let managerResult = IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone))
         guard managerResult == kIOReturnSuccess else {
             throw DCEliteError.deviceOpenFailed(code: managerResult)
         }
 
-        guard let deviceSet = IOHIDManagerCopyDevices(manager) as? Set<IOHIDDevice>,
-              let matchedDevice = deviceSet.first(where: {
-                  Self.intProperty($0, key: kIOHIDVendorIDKey) == DeviceInfo.vendorID
-                      && Self.intProperty($0, key: kIOHIDProductIDKey) == DeviceInfo.productID
-              }) else {
+        guard let matchedDevice = DeviceDiscovery.firstDevice(in: manager) else {
             IOHIDManagerClose(manager, IOOptionBits(kIOHIDOptionsTypeNone))
             throw DCEliteError.deviceNotFound
         }
@@ -97,6 +90,9 @@ public final class HIDTransport: @unchecked Sendable {
         )
         IOHIDDeviceRegisterRemovalCallback(device, Self.removalCallback, context)
         IOHIDDeviceSetDispatchQueue(device, callbackQueue)
+        IOHIDDeviceSetCancelHandler(device) { [cancellationSemaphore] in
+            cancellationSemaphore.signal()
+        }
         IOHIDDeviceActivate(device)
         activated = true
     }
@@ -104,6 +100,7 @@ public final class HIDTransport: @unchecked Sendable {
     deinit {
         if activated {
             IOHIDDeviceCancel(device)
+            _ = cancellationSemaphore.wait(timeout: .now() + 1)
         }
         IOHIDDeviceClose(device, IOOptionBits(kIOHIDOptionsTypeNone))
         IOHIDManagerClose(manager, IOOptionBits(kIOHIDOptionsTypeNone))
