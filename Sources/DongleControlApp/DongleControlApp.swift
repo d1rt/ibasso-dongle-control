@@ -1,18 +1,20 @@
+import DongleControlFeature
 import SwiftUI
 
 @main
-struct DCEliteControlApp: App {
+struct DongleControlApp: App {
     @StateObject private var model = AppModel()
 
     var body: some Scene {
-        WindowGroup("DC Elite Control") {
+        WindowGroup("Dongle Control for iBasso") {
             ContentView(model: model)
         }
         .windowResizability(.contentSize)
         .commands {
             CommandGroup(after: .toolbar) {
-                Button("Refresh Device") { model.refresh() }
+                Button("Refresh Device") { model.manualRefresh() }
                     .keyboardShortcut("r")
+                    .disabled(model.connectedProfile == nil)
             }
         }
     }
