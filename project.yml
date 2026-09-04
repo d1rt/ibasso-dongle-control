@@ -1,6 +1,6 @@
-name: DCEliteControl
+name: IBassoDongleControl
 options:
-  bundleIdPrefix: dev.dcelite
+  bundleIdPrefix: app.donglecontrol
   deploymentTarget:
     macOS: "13.0"
 settings:
@@ -8,56 +8,68 @@ settings:
     SWIFT_VERSION: "6.0"
     MACOSX_DEPLOYMENT_TARGET: "13.0"
 targets:
-  DCEliteCore:
+  BassoCore:
     type: framework
     platform: macOS
-    sources: Sources/DCEliteCore
+    sources: Sources/BassoCore
     dependencies:
       - sdk: IOKit.framework
       - sdk: AudioToolbox.framework
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.core
+        PRODUCT_BUNDLE_IDENTIFIER: app.donglecontrol.core
         GENERATE_INFOPLIST_FILE: YES
-  dc-elite:
+  DongleControlFeature:
+    type: framework
+    platform: macOS
+    sources: Sources/DongleControlFeature
+    dependencies:
+      - target: BassoCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.donglecontrol.feature
+        GENERATE_INFOPLIST_FILE: YES
+  ibasso-dongle:
     type: tool
     platform: macOS
-    sources: Sources/DCEliteCLI
+    sources: Sources/BassoCLI
     dependencies:
-      - target: DCEliteCore
+      - target: BassoCore
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.cli
-  DC Elite Control:
+        PRODUCT_BUNDLE_IDENTIFIER: app.donglecontrol.cli
+  Dongle Control for iBasso:
     type: application
     platform: macOS
-    sources: Sources/DCEliteControlApp
+    sources: Sources/DongleControlApp
     dependencies:
-      - target: DCEliteCore
+      - target: BassoCore
+      - target: DongleControlFeature
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.app
-        PRODUCT_NAME: DC Elite Control
+        PRODUCT_BUNDLE_IDENTIFIER: app.donglecontrol.mac
+        PRODUCT_NAME: Dongle Control for iBasso
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: DC Elite Control
+        INFOPLIST_KEY_CFBundleDisplayName: Dongle Control for iBasso
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
         ENABLE_APP_SANDBOX: NO
-  DCEliteCoreTests:
+  BassoCoreTests:
     type: bundle.unit-test
     platform: macOS
-    sources: Tests/DCEliteCoreTests
+    sources: Tests/BassoCoreTests
     dependencies:
-      - target: DCEliteCore
+      - target: BassoCore
+      - target: DongleControlFeature
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.dcelite.tests
+        PRODUCT_BUNDLE_IDENTIFIER: app.donglecontrol.tests
         GENERATE_INFOPLIST_FILE: YES
 schemes:
-  DC Elite Control:
+  Dongle Control for iBasso:
     build:
       targets:
-        DC Elite Control: all
-        DCEliteCoreTests: [test]
+        Dongle Control for iBasso: all
+        BassoCoreTests: [test]
     test:
       targets:
-        - DCEliteCoreTests
+        - BassoCoreTests

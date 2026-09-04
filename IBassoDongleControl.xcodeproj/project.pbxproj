@@ -1,0 +1,893 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		092E448B02B5C2DEBF283035 /* DongleControlFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */; };
+		0BA0AFC9F893FFF368F8F065 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9ABE5D35C3E2F7DEB82F48 /* main.swift */; };
+		0FCBE26771B0171AB8044FD0 /* DongleControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3D795DE863775432E95CB9 /* DongleControlApp.swift */; };
+		131A2F97A38E58A18022ECB7 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CF68C89E9B43973CAF56D7 /* DeviceState.swift */; };
+		16B2DF7EE85079F6CF0EA13A /* DCEliteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648B7671D44BF97155F6D15 /* DCEliteProtocol.swift */; };
+		1B9C0A35D6D661B67ED3C07C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADB4AAA7359A2A795CC724 /* AppModel.swift */; };
+		2530865AFA8A7C39F28068F0 /* AudioDeviceDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9CEE23F2FED595FFA41D6 /* AudioDeviceDiscovery.swift */; };
+		348D6545A4E90A691F694892 /* PacketCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D56D18CFAB882AE4A60F5 /* PacketCodec.swift */; };
+		391EE286E091938217B63986 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A16958D9D8C11A17073B52 /* ContentView.swift */; };
+		426812C1077002668618E839 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C6C908C505C95030BA8F6 /* DeviceInfo.swift */; };
+		4A9A0D57B7D79FF9BDA6D8BD /* BassoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2740E095C39868D3BF1637 /* BassoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		54F98BD1B80C1DFBBAD1C563 /* BassoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2740E095C39868D3BF1637 /* BassoCore.framework */; };
+		584981518BF5242BAC77BDD0 /* DongleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BDC1A184A140A80E97CA7 /* DongleError.swift */; };
+		666773F48D553D0AEB26D79D /* DCEliteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC44452F19213D5DC0437A /* DCEliteProfile.swift */; };
+		67A16A626F1FD3115BE1E6D2 /* DongleControlFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		715EE872DB2EC87069C49386 /* PacketAndProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE500FF81F58562059BB0C /* PacketAndProtocolTests.swift */; };
+		74BA0421A5A8A7E4FD6584C8 /* BassoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2740E095C39868D3BF1637 /* BassoCore.framework */; };
+		89A3123B0506F20764DD8153 /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573C1013D8B6EB58D66FF416 /* AppModelTests.swift */; };
+		8F23FF2D43A87F7381F25E66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5DA551E542F31DF1379C22 /* AudioToolbox.framework */; };
+		93A9BF969E76EB4B8067C109 /* HIDTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE2952EB7F41696A72C0204 /* HIDTransport.swift */; };
+		B2665AD16449A12D0107B8D8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC27CA9DAABCBC10690ED8D /* Settings.swift */; };
+		B969B3E5B78EFC8E62BCD18D /* BassoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2740E095C39868D3BF1637 /* BassoCore.framework */; };
+		BC749E6178CDE51280AB8E23 /* DongleControlFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB0FCF85CA5FDD19015BC2B6 /* DeviceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB14B7FE0AC790F933B1738 /* DeviceControlService.swift */; };
+		CF56222D0C0A6629172F90DD /* ProfileAndClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82194A2929CA6985B86A95F2 /* ProfileAndClientTests.swift */; };
+		D60CEFFC2A8BB0F179BC3031 /* BassoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2740E095C39868D3BF1637 /* BassoCore.framework */; };
+		D98AC2200937265DBDD5EF50 /* DeviceDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEB36060FE6A177D622AF6 /* DeviceDiscovery.swift */; };
+		E618513B4FD02A2CC6404B59 /* HIDDeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BAFED4EF152B8EE6121D30 /* HIDDeviceMonitor.swift */; };
+		EC7C0C8C327ABB8BF2585EC3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5558E685CA7B06418818427 /* IOKit.framework */; };
+		EF6742BFBB29BA0B0E852065 /* DongleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA103CB4B5CCF1FC6387D78A /* DongleClient.swift */; };
+		FDBDB57E0C8AF9FF5B22113F /* BassoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2740E095C39868D3BF1637 /* BassoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEFD134AAF536F8016B5EAA0 /* DongleControlFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */; };
+		FF5A855F54AF661F8945CD55 /* DeviceProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C51FFF5215B1ADD162976 /* DeviceProfile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40E433C013430F9F309E3B58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56C19D1B86D73DA8791F555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D28A82BB33090829D34446F2;
+			remoteInfo = BassoCore;
+		};
+		79E78B0D2FB17CF34689DA70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56C19D1B86D73DA8791F555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD6776D1ADDE9DD371DEFE62;
+			remoteInfo = DongleControlFeature;
+		};
+		8A5EA5A84A8051AFC557C316 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56C19D1B86D73DA8791F555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD6776D1ADDE9DD371DEFE62;
+			remoteInfo = DongleControlFeature;
+		};
+		D48E078DDA6DD36E3EF8FF6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56C19D1B86D73DA8791F555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D28A82BB33090829D34446F2;
+			remoteInfo = BassoCore;
+		};
+		DFE50B15507342826CBEB153 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56C19D1B86D73DA8791F555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D28A82BB33090829D34446F2;
+			remoteInfo = BassoCore;
+		};
+		FA18F5ADE30825D90F7E43E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56C19D1B86D73DA8791F555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D28A82BB33090829D34446F2;
+			remoteInfo = BassoCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76F224931FC79B11D01E30A2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FDBDB57E0C8AF9FF5B22113F /* BassoCore.framework in Embed Frameworks */,
+				67A16A626F1FD3115BE1E6D2 /* DongleControlFeature.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88A49B48CE5D03D9346220A9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A9A0D57B7D79FF9BDA6D8BD /* BassoCore.framework in Embed Frameworks */,
+				BC749E6178CDE51280AB8E23 /* DongleControlFeature.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		256C6C908C505C95030BA8F6 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		2F6D56D18CFAB882AE4A60F5 /* PacketCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketCodec.swift; sourceTree = "<group>"; };
+		311172284B1718AA68A8701B /* BassoCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BassoCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BF78A90FFC04B301005170 /* ibasso-dongle */ = {isa = PBXFileReference; includeInIndex = 0; path = "ibasso-dongle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BAFED4EF152B8EE6121D30 /* HIDDeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIDDeviceMonitor.swift; sourceTree = "<group>"; };
+		4B6C51FFF5215B1ADD162976 /* DeviceProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProfile.swift; sourceTree = "<group>"; };
+		4BBBCBF6613DDE54B06C6910 /* Dongle Control for iBasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dongle Control for iBasso.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FB14B7FE0AC790F933B1738 /* DeviceControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlService.swift; sourceTree = "<group>"; };
+		5648B7671D44BF97155F6D15 /* DCEliteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCEliteProtocol.swift; sourceTree = "<group>"; };
+		573C1013D8B6EB58D66FF416 /* AppModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelTests.swift; sourceTree = "<group>"; };
+		5E2740E095C39868D3BF1637 /* BassoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BassoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3D795DE863775432E95CB9 /* DongleControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongleControlApp.swift; sourceTree = "<group>"; };
+		6FE2952EB7F41696A72C0204 /* HIDTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIDTransport.swift; sourceTree = "<group>"; };
+		76A16958D9D8C11A17073B52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7E9ABE5D35C3E2F7DEB82F48 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		82194A2929CA6985B86A95F2 /* ProfileAndClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAndClientTests.swift; sourceTree = "<group>"; };
+		86CF68C89E9B43973CAF56D7 /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		92D9CEE23F2FED595FFA41D6 /* AudioDeviceDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceDiscovery.swift; sourceTree = "<group>"; };
+		9DEEB36060FE6A177D622AF6 /* DeviceDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDiscovery.swift; sourceTree = "<group>"; };
+		B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DongleControlFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA103CB4B5CCF1FC6387D78A /* DongleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongleClient.swift; sourceTree = "<group>"; };
+		CAC27CA9DAABCBC10690ED8D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CC5DA551E542F31DF1379C22 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CDAC44452F19213D5DC0437A /* DCEliteProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCEliteProfile.swift; sourceTree = "<group>"; };
+		D2ADB4AAA7359A2A795CC724 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		D8CE500FF81F58562059BB0C /* PacketAndProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketAndProtocolTests.swift; sourceTree = "<group>"; };
+		F5558E685CA7B06418818427 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		F79BDC1A184A140A80E97CA7 /* DongleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongleError.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12273175190EFD2B04B54922 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60CEFFC2A8BB0F179BC3031 /* BassoCore.framework in Frameworks */,
+				FEFD134AAF536F8016B5EAA0 /* DongleControlFeature.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3548FE04B68CB62C92860403 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BA0421A5A8A7E4FD6584C8 /* BassoCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36A0B106A7810E8BECE2FB25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F98BD1B80C1DFBBAD1C563 /* BassoCore.framework in Frameworks */,
+				092E448B02B5C2DEBF283035 /* DongleControlFeature.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8759DF8C47F7045BB2935D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B969B3E5B78EFC8E62BCD18D /* BassoCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D36B41C15E4C381BEA8D696E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7C0C8C327ABB8BF2585EC3 /* IOKit.framework in Frameworks */,
+				8F23FF2D43A87F7381F25E66 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05CBD11F7C08F66E76DD522E /* BassoCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				573C1013D8B6EB58D66FF416 /* AppModelTests.swift */,
+				D8CE500FF81F58562059BB0C /* PacketAndProtocolTests.swift */,
+				82194A2929CA6985B86A95F2 /* ProfileAndClientTests.swift */,
+			);
+			name = BassoCoreTests;
+			path = Tests/BassoCoreTests;
+			sourceTree = "<group>";
+		};
+		0CD1C1FED113DDE5D38AC4D9 /* BassoCore */ = {
+			isa = PBXGroup;
+			children = (
+				92D9CEE23F2FED595FFA41D6 /* AudioDeviceDiscovery.swift */,
+				4FB14B7FE0AC790F933B1738 /* DeviceControlService.swift */,
+				9DEEB36060FE6A177D622AF6 /* DeviceDiscovery.swift */,
+				256C6C908C505C95030BA8F6 /* DeviceInfo.swift */,
+				4B6C51FFF5215B1ADD162976 /* DeviceProfile.swift */,
+				86CF68C89E9B43973CAF56D7 /* DeviceState.swift */,
+				BA103CB4B5CCF1FC6387D78A /* DongleClient.swift */,
+				F79BDC1A184A140A80E97CA7 /* DongleError.swift */,
+				36BAFED4EF152B8EE6121D30 /* HIDDeviceMonitor.swift */,
+				6FE2952EB7F41696A72C0204 /* HIDTransport.swift */,
+				2F6D56D18CFAB882AE4A60F5 /* PacketCodec.swift */,
+				CAC27CA9DAABCBC10690ED8D /* Settings.swift */,
+				5C96A392004E993AF03897FC /* Devices */,
+			);
+			name = BassoCore;
+			path = Sources/BassoCore;
+			sourceTree = "<group>";
+		};
+		1903604731189276CD2A4297 /* DongleControlFeature */ = {
+			isa = PBXGroup;
+			children = (
+				D2ADB4AAA7359A2A795CC724 /* AppModel.swift */,
+			);
+			name = DongleControlFeature;
+			path = Sources/DongleControlFeature;
+			sourceTree = "<group>";
+		};
+		1AA27A26800717BE90ADE02C /* DongleControlApp */ = {
+			isa = PBXGroup;
+			children = (
+				76A16958D9D8C11A17073B52 /* ContentView.swift */,
+				6E3D795DE863775432E95CB9 /* DongleControlApp.swift */,
+			);
+			name = DongleControlApp;
+			path = Sources/DongleControlApp;
+			sourceTree = "<group>";
+		};
+		20DE60B488F5D77D1700343D /* BassoCLI */ = {
+			isa = PBXGroup;
+			children = (
+				7E9ABE5D35C3E2F7DEB82F48 /* main.swift */,
+			);
+			name = BassoCLI;
+			path = Sources/BassoCLI;
+			sourceTree = "<group>";
+		};
+		5C96A392004E993AF03897FC /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				CDAC44452F19213D5DC0437A /* DCEliteProfile.swift */,
+				5648B7671D44BF97155F6D15 /* DCEliteProtocol.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		5EFE74678186A8B3C2738821 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC5DA551E542F31DF1379C22 /* AudioToolbox.framework */,
+				F5558E685CA7B06418818427 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DCDF66B2472569526C4721D = {
+			isa = PBXGroup;
+			children = (
+				20DE60B488F5D77D1700343D /* BassoCLI */,
+				0CD1C1FED113DDE5D38AC4D9 /* BassoCore */,
+				05CBD11F7C08F66E76DD522E /* BassoCoreTests */,
+				1AA27A26800717BE90ADE02C /* DongleControlApp */,
+				1903604731189276CD2A4297 /* DongleControlFeature */,
+				5EFE74678186A8B3C2738821 /* Frameworks */,
+				855006B27398075C3CB90A95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		855006B27398075C3CB90A95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E2740E095C39868D3BF1637 /* BassoCore.framework */,
+				311172284B1718AA68A8701B /* BassoCoreTests.xctest */,
+				4BBBCBF6613DDE54B06C6910 /* Dongle Control for iBasso.app */,
+				B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */,
+				33BF78A90FFC04B301005170 /* ibasso-dongle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69682EE5101DB34B430E02AB /* BassoCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2D83297E7A05BF2A166AD6C /* Build configuration list for PBXNativeTarget "BassoCoreTests" */;
+			buildPhases = (
+				BC0D6D19ADFD34CBDB93CC9C /* Sources */,
+				36A0B106A7810E8BECE2FB25 /* Frameworks */,
+				88A49B48CE5D03D9346220A9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F04F2C886B65240789BFC2AA /* PBXTargetDependency */,
+				A910DE16F0518FDBC49FE6A3 /* PBXTargetDependency */,
+			);
+			name = BassoCoreTests;
+			packageProductDependencies = (
+			);
+			productName = BassoCoreTests;
+			productReference = 311172284B1718AA68A8701B /* BassoCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B013A34A1B87D73677D2830D /* Dongle Control for iBasso */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF2D9BF8189752A59D0D425D /* Build configuration list for PBXNativeTarget "Dongle Control for iBasso" */;
+			buildPhases = (
+				0A8A8A3C56F99BD9F586380A /* Sources */,
+				12273175190EFD2B04B54922 /* Frameworks */,
+				76F224931FC79B11D01E30A2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A70705C325544C31FECCF57 /* PBXTargetDependency */,
+				399D930F73034452FFB33834 /* PBXTargetDependency */,
+			);
+			name = "Dongle Control for iBasso";
+			packageProductDependencies = (
+			);
+			productName = "Dongle Control for iBasso";
+			productReference = 4BBBCBF6613DDE54B06C6910 /* Dongle Control for iBasso.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D28A82BB33090829D34446F2 /* BassoCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F63A5352BF35E6573877774 /* Build configuration list for PBXNativeTarget "BassoCore" */;
+			buildPhases = (
+				A5239E5FB573C446E52262A3 /* Sources */,
+				D36B41C15E4C381BEA8D696E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BassoCore;
+			packageProductDependencies = (
+			);
+			productName = BassoCore;
+			productReference = 5E2740E095C39868D3BF1637 /* BassoCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DD239DA07E964D06920B9CA3 /* ibasso-dongle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A23889D65A202E885E3384C /* Build configuration list for PBXNativeTarget "ibasso-dongle" */;
+			buildPhases = (
+				2C66114F327FF61E35662FDB /* Sources */,
+				3548FE04B68CB62C92860403 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DE662B28EE738F7F0224256 /* PBXTargetDependency */,
+			);
+			name = "ibasso-dongle";
+			packageProductDependencies = (
+			);
+			productName = "ibasso-dongle";
+			productReference = 33BF78A90FFC04B301005170 /* ibasso-dongle */;
+			productType = "com.apple.product-type.tool";
+		};
+		FD6776D1ADDE9DD371DEFE62 /* DongleControlFeature */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 718F676D66EC298D0C75BC91 /* Build configuration list for PBXNativeTarget "DongleControlFeature" */;
+			buildPhases = (
+				D016EAEFD52B122F06DE17F5 /* Sources */,
+				6D8759DF8C47F7045BB2935D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B666DDCA309C788ED5828744 /* PBXTargetDependency */,
+			);
+			name = DongleControlFeature;
+			packageProductDependencies = (
+			);
+			productName = DongleControlFeature;
+			productReference = B513DDD03BCC66B27A736C66 /* DongleControlFeature.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F56C19D1B86D73DA8791F555 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 7A823ADACA36CEFECF639695 /* Build configuration list for PBXProject "IBassoDongleControl" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7DCDF66B2472569526C4721D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 855006B27398075C3CB90A95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28A82BB33090829D34446F2 /* BassoCore */,
+				FD6776D1ADDE9DD371DEFE62 /* DongleControlFeature */,
+				DD239DA07E964D06920B9CA3 /* ibasso-dongle */,
+				B013A34A1B87D73677D2830D /* Dongle Control for iBasso */,
+				69682EE5101DB34B430E02AB /* BassoCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A8A8A3C56F99BD9F586380A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				391EE286E091938217B63986 /* ContentView.swift in Sources */,
+				0FCBE26771B0171AB8044FD0 /* DongleControlApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C66114F327FF61E35662FDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BA0AFC9F893FFF368F8F065 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5239E5FB573C446E52262A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2530865AFA8A7C39F28068F0 /* AudioDeviceDiscovery.swift in Sources */,
+				666773F48D553D0AEB26D79D /* DCEliteProfile.swift in Sources */,
+				16B2DF7EE85079F6CF0EA13A /* DCEliteProtocol.swift in Sources */,
+				CB0FCF85CA5FDD19015BC2B6 /* DeviceControlService.swift in Sources */,
+				D98AC2200937265DBDD5EF50 /* DeviceDiscovery.swift in Sources */,
+				426812C1077002668618E839 /* DeviceInfo.swift in Sources */,
+				FF5A855F54AF661F8945CD55 /* DeviceProfile.swift in Sources */,
+				131A2F97A38E58A18022ECB7 /* DeviceState.swift in Sources */,
+				EF6742BFBB29BA0B0E852065 /* DongleClient.swift in Sources */,
+				584981518BF5242BAC77BDD0 /* DongleError.swift in Sources */,
+				E618513B4FD02A2CC6404B59 /* HIDDeviceMonitor.swift in Sources */,
+				93A9BF969E76EB4B8067C109 /* HIDTransport.swift in Sources */,
+				348D6545A4E90A691F694892 /* PacketCodec.swift in Sources */,
+				B2665AD16449A12D0107B8D8 /* Settings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC0D6D19ADFD34CBDB93CC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A3123B0506F20764DD8153 /* AppModelTests.swift in Sources */,
+				715EE872DB2EC87069C49386 /* PacketAndProtocolTests.swift in Sources */,
+				CF56222D0C0A6629172F90DD /* ProfileAndClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D016EAEFD52B122F06DE17F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B9C0A35D6D661B67ED3C07C /* AppModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0DE662B28EE738F7F0224256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D28A82BB33090829D34446F2 /* BassoCore */;
+			targetProxy = D48E078DDA6DD36E3EF8FF6F /* PBXContainerItemProxy */;
+		};
+		399D930F73034452FFB33834 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD6776D1ADDE9DD371DEFE62 /* DongleControlFeature */;
+			targetProxy = 79E78B0D2FB17CF34689DA70 /* PBXContainerItemProxy */;
+		};
+		8A70705C325544C31FECCF57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D28A82BB33090829D34446F2 /* BassoCore */;
+			targetProxy = FA18F5ADE30825D90F7E43E9 /* PBXContainerItemProxy */;
+		};
+		A910DE16F0518FDBC49FE6A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD6776D1ADDE9DD371DEFE62 /* DongleControlFeature */;
+			targetProxy = 8A5EA5A84A8051AFC557C316 /* PBXContainerItemProxy */;
+		};
+		B666DDCA309C788ED5828744 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D28A82BB33090829D34446F2 /* BassoCore */;
+			targetProxy = DFE50B15507342826CBEB153 /* PBXContainerItemProxy */;
+		};
+		F04F2C886B65240789BFC2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D28A82BB33090829D34446F2 /* BassoCore */;
+			targetProxy = 40E433C013430F9F309E3B58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A31814AD75C0589846331CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.feature;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		2F63D947AD3C5367DCBB6606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.tests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3EA4BB54984FF9E5C6A20682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dongle Control for iBasso";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.mac;
+				PRODUCT_NAME = "Dongle Control for iBasso";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		69BBD615EA89F5131B50C569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.feature;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		771244A107CB7D5B602A993F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		7F58543303A763A5AB81A06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.core;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		80A2F68D56B06121411250DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.cli;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA104EEE8A1D18501D8ABEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.tests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B3AB5E01EFAF0589189D4D2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dongle Control for iBasso";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.mac;
+				PRODUCT_NAME = "Dongle Control for iBasso";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BB6B9135EBBD48A7D264F8D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		BDD257410CB202F23A511B78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.cli;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FDD45A094CF6613BE33C474E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.donglecontrol.core;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F63A5352BF35E6573877774 /* Build configuration list for PBXNativeTarget "BassoCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F58543303A763A5AB81A06F /* Debug */,
+				FDD45A094CF6613BE33C474E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		718F676D66EC298D0C75BC91 /* Build configuration list for PBXNativeTarget "DongleControlFeature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A31814AD75C0589846331CC /* Debug */,
+				69BBD615EA89F5131B50C569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7A23889D65A202E885E3384C /* Build configuration list for PBXNativeTarget "ibasso-dongle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80A2F68D56B06121411250DE /* Debug */,
+				BDD257410CB202F23A511B78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7A823ADACA36CEFECF639695 /* Build configuration list for PBXProject "IBassoDongleControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6B9135EBBD48A7D264F8D9 /* Debug */,
+				771244A107CB7D5B602A993F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A2D83297E7A05BF2A166AD6C /* Build configuration list for PBXNativeTarget "BassoCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA104EEE8A1D18501D8ABEF9 /* Debug */,
+				2F63D947AD3C5367DCBB6606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CF2D9BF8189752A59D0D425D /* Build configuration list for PBXNativeTarget "Dongle Control for iBasso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EA4BB54984FF9E5C6A20682 /* Debug */,
+				B3AB5E01EFAF0589189D4D2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F56C19D1B86D73DA8791F555 /* Project object */;
+}
