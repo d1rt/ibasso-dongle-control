@@ -7,6 +7,9 @@ Dongle Control for iBasso is a small native SwiftUI application and command-line
 This project is not affiliated with or endorsed by iBasso Audio.  
 iBasso and DC Elite are trademarks of their respective owners.
 
+<img width="888" height="574" alt="изображение" src="https://github.com/user-attachments/assets/4d1d6c4c-7ed9-4a28-a9bc-654c95bf7932" />
+
+
 ## Installation
 
 Download the latest DMG from [GitHub Releases](https://github.com/d1rt/ibasso-dongle-control/releases/latest).
